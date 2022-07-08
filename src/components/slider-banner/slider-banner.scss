@@ -1,0 +1,211 @@
+.banner__section {
+  width: 100%;
+  padding-top: 2rem;
+  height: 700px;
+
+  @media (max-width: 900px) {
+    height: 100%;
+  }
+
+  .wrapper {
+    height: 100%;
+    position: relative;
+
+    @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+    .slider__controller {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 55;
+      width: 100%;
+
+      @media (max-width: 768px) {
+        position: relative;
+        top: unset;
+        transform: unset;
+        display: flex;
+        align-items: center;
+        grid-gap: 1rem;
+        justify-content: center;
+      }
+
+      .controller__btn {
+        background: transparent;
+        border: 0;
+        outline: none;
+        cursor: pointer;
+
+        &.controller__next {
+          position: absolute;
+          right: 0;
+
+          @media (max-width: 768px) {
+            position: relative;
+            right: unset;
+          }
+
+          .text {
+            margin-right: -1rem;
+          }
+        }
+
+        &.controller__prev {
+          position: absolute;
+          left: 0;
+
+          @media (max-width: 768px) {
+            position: relative;
+            left: unset;
+          }
+
+          .text {
+            margin-left: -1rem;
+          }
+        }
+
+        span {
+          display: flex;
+          align-items: center;
+
+          svg {
+            font-size: 60px;
+          }
+
+          .text {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 12px;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+
+    .banner__slider {
+      width: 100%;
+      height: 100%;
+      position: relative;
+
+      &::before {
+        content: "sale";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-transform: uppercase;
+        font-size: 30rem;
+        font-weight: bold;
+        z-index: -1;
+        color: #a27b5c;
+        opacity: 0.1;
+        letter-spacing: 5rem;
+      }
+
+      .slider__item {
+        width: 100%;
+        height: 700px;
+        position: relative;
+
+        @media (max-width: 900px) {
+          height: 100%;
+        }
+
+        .slider__img {
+          position: absolute;
+          top: 0;
+          right: 5%;
+          width: 500px;
+          height: 100%;
+          aspect-ratio: 1 / 1;
+
+          @media (max-width: 1536px) {
+            width: 350px;
+            right: 10%;
+          }
+
+          @media (max-width: 900px) {
+            width: 100%;
+            position: relative;
+            right: unset;
+            top: unset;
+            transform: unset;
+            width: 100%;
+            height: 400px;
+          }
+
+          @media (max-width: 650px) {
+            height: 350px;
+          }
+
+          @media (max-width: 550px) {
+            height: 300px;
+          }
+
+          @media (max-width: 450px) {
+            height: 250px;
+          }
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+
+        .slider__details {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 10%;
+          width: 50%;
+          display: flex;
+          flex-direction: column;
+
+          @media (max-width: 1200px) {
+            width: 40%;
+          }
+
+          @media (max-width: 900px) {
+            width: 100%;
+            position: relative;
+            left: unset;
+            top: unset;
+            transform: unset;
+            margin-top: 1rem;
+          }
+
+          .slider__category {
+            font-size: 14px;
+            text-transform: uppercase;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            color: #a27b5c;
+          }
+
+          .slider__title {
+            font-size: 22px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            color: #333;
+          }
+
+          .slider__desc {
+            font-size: 16px;
+            margin-top: 1rem;
+            letter-spacing: 0.5px;
+            line-height: 30px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.slick-list {
+  overflow: visible !important;
+  overflow-x: hidden !important;
+}
